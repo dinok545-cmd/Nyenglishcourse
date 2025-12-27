@@ -1,17 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'path'
-
+// vite.config.ts
 export default defineConfig({
-  base: '/Nyenglishcourse/', // ← имя репозитория на GitHub
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+  base: '/Nyenglishcourse/',
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  server: {
+    middlewareMode: true,
   },
 })
